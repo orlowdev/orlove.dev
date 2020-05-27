@@ -1,3 +1,10 @@
+# IntelliJ
+.idea
+
+# Gatsby
+.cache
+public
+
 # Logs
 logs
 *.log
