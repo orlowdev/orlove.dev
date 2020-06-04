@@ -48,6 +48,10 @@ const Seo: FC<ISeoProps> = ({
   const metaUrl = url || defaultUrl
   const metaImage = image || defaultImage.sharp.fixed
 
+  if (!metaImage.src.startsWith('https')) {
+    metaImage.src = 'https://orlove.dev'.concat(metaImage.src)
+  }
+
   const defaultMeta: MetaProps[] = [
     {
       name: 'description',
