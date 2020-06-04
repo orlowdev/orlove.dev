@@ -56,7 +56,7 @@ const PageTemplate: FC<{ data: PageContentsQuery }> = ({ data }) => {
     <>
       <Seo
         url={`https://orlove.dev${post.fields.slug}`}
-        title={post.frontmatter.title}
+        title={`${post.frontmatter.title} | Orlove.dev`}
         description={post.frontmatter.description}
         image={post.frontmatter.image?.sharp?.fixed}
       />

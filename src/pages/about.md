@@ -1,5 +1,5 @@
 ---
-title: Hi,
+title: About ||l
 description: Sergei Orlov is a full-stack JavaScript developer with experience in software and solution architecture.
 ---
 
