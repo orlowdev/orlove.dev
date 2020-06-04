@@ -9,6 +9,7 @@ export enum Color {
   BACKGROUND = '#f9f9f9',
   TEXT = '#333',
   DISABLED = '#eee',
+  '#9C89B8' = '#a71e60',
 }
 
 export const GlobalStyles = () => (

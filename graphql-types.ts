@@ -2436,10 +2436,12 @@ export type SitePageConnectionGroupArgs = {
 
 export type SitePageContext = {
   slug?: Maybe<Scalars['String']>;
+  tag?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
+  tag?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -2542,6 +2544,7 @@ export type SitePageFieldsEnum =
   | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
   | 'context___slug'
+  | 'context___tag'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -3274,6 +3277,22 @@ export type PageContentsQuery = { markdownRemark?: Maybe<(
       & { image?: Maybe<{ sharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment>, fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> }
     )> }
   )> };
+
+export type TagsContentQueryVariables = {
+  tag?: Maybe<Scalars['String']>;
+};
+
+
+export type TagsContentQuery = { allMarkdownRemark: (
+    Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'excerpt' | 'timeToRead'>
+        & { frontmatter?: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'description' | 'imageAlt'>
+          & { image?: Maybe<{ sharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> }
+        )>, fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
+      ) }> }
+  ) };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

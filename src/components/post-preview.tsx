@@ -29,10 +29,16 @@ const PostImageLink = styled(Link)`
   }
 `
 
+const PostImage = styled(GatsbyImage)`
+  border: 0;
+  border-radius: 0.25rem;
+`
+
 const PostWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
 `
 
 const PostDescription = styled.div`
@@ -50,9 +56,9 @@ interface IPostPreviewProps {
 export const PostPreview: FC<IPostPreviewProps> = ({ post }) => (
   <PostWrapper>
     <PostImageLink to={post.fields.slug}>
-      <GatsbyImage
+      <PostImage
         title={post.frontmatter.imageAlt}
-        fixed={post.frontmatter.image.sharp.fixed}
+        fixed={post.frontmatter.image?.sharp?.fixed}
         alt={post.frontmatter.imageAlt}
         fadeIn
       />

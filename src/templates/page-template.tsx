@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { Layout } from '../components/layout'
 import styled from '@emotion/styled'
 import BackgroundImage from 'gatsby-background-image'
@@ -87,7 +87,9 @@ const PageTemplate: FC<{ data: PageContentsQuery }> = ({ data }) => {
             <LabelList>
               <Label>{post.frontmatter.category}</Label>
               {post.frontmatter.tags.map((tag, i) => (
-                <Label key={tag || i}>#{tag}</Label>
+                <Label key={tag || i}>
+                  <Link to={`/tags/${tag}`}>#{tag}</Link>
+                </Label>
               ))}
             </LabelList>
           )}
@@ -114,7 +116,7 @@ export const query = graphql`
         description
         image {
           sharp: childImageSharp {
-            fluid(quality: 100, duotone: { highlight: "#F0A6CA", shadow: "#9C89B8" }) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp
             }
             fixed(quality: 90, width: 1200, height: 630) {
