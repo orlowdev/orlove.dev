@@ -97,27 +97,7 @@ const PageTemplate: FC<{ data: PageContentsQuery }> = ({ data }) => {
 export const query = graphql`
   query PageContents($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        song
-        tags
-        description
-        image {
-          sharp: childImageSharp {
-            fluid(quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            fixed(quality: 90, width: 1200, height: 630) {
-              ...GatsbyImageSharpFixed_withWebp
-            }
-          }
-        }
-        imageAlt
-      }
+      ...PostPage
     }
   }
 `

@@ -41,29 +41,9 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
-      totalCount
       edges {
         node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            description
-            imageAlt
-            tags
-            image {
-              sharp: childImageSharp {
-                fixed(quality: 90, width: 220, height: 220) {
-                  ...GatsbyImageSharpFixed_withWebp
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-          excerpt(pruneLength: 150)
-          timeToRead
+          ...PostPreview
         }
       }
     }
