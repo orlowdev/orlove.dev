@@ -15,6 +15,6 @@ jobs:
     - name: Install dependencies
       run: npm i
     - name: Lint Markdown with Prettier
-      run: npm run lint:prettier
+      run: npm run lint:md
     - name: Lint code with ESLint
       run: npm run lint:ts
