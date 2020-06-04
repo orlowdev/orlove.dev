@@ -17,7 +17,7 @@ published: true
 One of the problems I observe in communication (and I have this problem myself) is that we _imply_ things.
 When we start a conversation we rarely start from providing the context and rush straight into what we want to
 say or ask. We imply that everyone is in the context of what we are going to talk about. Especially if
-the topic of the discussion is declared. This is a selfish notion. And when we expect that peopl
+the topic of the discussion is declared. This is a selfish notion. And when we expect that people
 are ready to jump into our train of thought, we are almost always wrong.
 
 The reason is simple - obvious things are not obvious. Or, at least, they are not obvious to everyone.
@@ -81,15 +81,15 @@ nothing bad about it. So I just make some room for those things when I pick the 
 
 #### Make sure everyone who should participate CAN participate
 
-I taught myself to check the schedule of the people I am going to invite. Don't pull the anxiety trigger by
+I taught myself to check the schedule of those I am going to invite. Don't pull the anxiety trigger by
 creating events atop existing events. In the best scenario, the person will evaluate what is more important and
 pick the event which they find more relevant. My subjective point is: it is not possible _before_ the talk. And
-chances are, you will get the maybe/tentative status because you came the second. Moreover, I see people
+chances are, you will get the maybe/tentative status because you came the second. Moreover, I see others
 mastering the creation of catchy meetings names so I'm just not good enough to beat them. So, for me an easier
 way is to find a time slot that suits everyone. Another piece of advice - don't send invites to people who are
 on a leave. If they are from a different country, respect national holidays.
 
-Although it might seem OK to create event hamburgers for people marked as "optional", it should still be
+Although it might seem OK to create event hamburgers for those marked as "optional", it should still be
 avoided. If you just want the person to be informed about the event - better use other means. But, from my
 experience, not the events matter - their outcomes do. So, I typically just [send them a follow-up](#send-a-follow-up).
 
@@ -108,7 +108,7 @@ related to what is going to be discussed during the topic.
 #### Take notes
 
 If I happen to be the one who talks the most, I ask someone to make notes and then hand them to me. Don't
-pass the obligation to send follow-ups to other people. Respect their time. Moreover, there might be people
+pass the obligation to send follow-ups to others. Respect their time. Moreover, there might be people
 outside the invited group who are also interested in the outcomes of the discussion.
 
 ### After the talk
@@ -125,7 +125,7 @@ Do your best to reach the expected result in less time than is reserved. You wou
 if you created a free spot in their schedules so that they could go and make a coffee and prepare for what
 they have to do next. On the other hand, don't prefer redundant time just to get the reputation of a nice
 person to have meetings with - people will get used to it and soon you'll get in a situation when even that amount
-of time is not enough. Guess who will lose the reputation at once? Besides, you block other people from
+of time is not enough. Guess who will lose the reputation at once? Besides, you block others from
 using the time for what is really important.
 
 #### Send a follow-up
