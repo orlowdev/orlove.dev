@@ -76,7 +76,7 @@ export const PostPreview: FC<IPostPreviewProps> = ({ post }) => (
         {post.timeToRead} min read
       </Caption>
       <p>
-        {post.excerpt} <Link to={post.fields.slug}>Read more</Link>
+        {post.excerpt} <Link to={post.fields.slug}>Read post</Link>
       </p>
       <LabelList>
         {post.frontmatter.tags.slice(0, 3).map((tag) => (
