@@ -5,7 +5,7 @@ import { BlogPostsQuery } from '../../graphql-types'
 import { BlogPost } from '../models/blog-post'
 import styled from '@emotion/styled'
 import Seo from '../components/seo'
-import { PostPreview } from '../components/post-review'
+import { PostPreview } from '../components/post-preview'
 
 const BlogTitle = styled.h1`
   font-size: 3rem;
