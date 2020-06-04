@@ -78,7 +78,7 @@ export const PostPreview: FC<IPostPreviewProps> = ({ post }) => (
       <p>
         {post.excerpt} <Link to={post.fields.slug}>Read post</Link>
       </p>
-      <Labels from={post.frontmatter.tags} limit={3} />
+      <Labels from={post.frontmatter.tags || []} limit={3} />
     </PostDescription>
   </PostWrapper>
 )

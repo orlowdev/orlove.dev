@@ -81,7 +81,7 @@ const PageTemplate: FC<IPageTemplateProps> = ({ data }) => {
 
           <h1>{post.frontmatter.title}</h1>
 
-          <Labels from={post.frontmatter.tags} />
+          <Labels from={post.frontmatter.tags || []} />
 
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </PageWrapper>
