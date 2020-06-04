@@ -39,7 +39,8 @@ export const GlobalStyles = () => (
         color: ${Color.TEXT};
 
         :hover,
-        :focus {
+        :focus,
+        &.active {
           color: ${Color.PRIMARY};
         }
       }

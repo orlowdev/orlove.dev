@@ -54,13 +54,19 @@ export const Header = () => (
     <Nav>
       <ul>
         <li>
-          <Link to={InternalRoute.HOME}>Blog</Link>
+          <Link to={InternalRoute.HOME} activeClassName="active">
+            Blog
+          </Link>
         </li>
         <li>
-          <Link to={InternalRoute.ABOUT}>About</Link>
+          <Link to={InternalRoute.ABOUT} activeClassName="active">
+            About
+          </Link>
         </li>
         <li>
-          <Link to={InternalRoute.CONTACTS}>Contacts</Link>
+          <Link to={InternalRoute.CONTACTS} activeClassName="active">
+            Contacts
+          </Link>
         </li>
       </ul>
     </Nav>
