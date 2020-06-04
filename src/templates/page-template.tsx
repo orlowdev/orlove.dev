@@ -43,7 +43,11 @@ const PageWrapper = styled.div`
   margin-top: 2rem;
 `
 
-const PageTemplate: FC<{ data: PageContentsQuery }> = ({ data }) => {
+interface IPageTemplateProps {
+  data: PageContentsQuery
+}
+
+const PageTemplate: FC<IPageTemplateProps> = ({ data }) => {
   const post = BlogPost(data.markdownRemark)
 
   return (

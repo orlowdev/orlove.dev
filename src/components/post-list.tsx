@@ -1,8 +1,7 @@
-import { PostListTitle } from './text'
-import { PostPreview } from './post-preview'
-import { Layout } from './layout'
 import React, { FC } from 'react'
 import { IBlogPost } from '../models/blog-post'
+import { PostPreview } from './post-preview'
+import { PostListTitle } from './text'
 
 interface IPostListProps {
   posts: IBlogPost[]

@@ -1,15 +1,10 @@
-import { Color } from './global-styles'
 import styled from '@emotion/styled'
-import React, { FC } from 'react'
 import { Link } from 'gatsby'
+import React, { FC } from 'react'
 
-interface ILabelProps {
-  background?: Color
-}
-
-export const Label = styled.span<ILabelProps>`
+export const Label = styled.span`
   padding: 0.25rem 0.5rem;
-  background-color: ${(p) => p.background || '#eee'};
+  background-color: #eee;
   font-size: 0.8rem;
   margin-right: 8px;
   margin-bottom: 8px;
