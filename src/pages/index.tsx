@@ -33,9 +33,10 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             description
             imageAlt
+            tags
             image {
               sharp: childImageSharp {
-                fixed(quality: 90, width: 200, height: 200) {
+                fixed(quality: 90, width: 220, height: 220) {
                   ...GatsbyImageSharpFixed_withWebp
                 }
               }
@@ -44,7 +45,7 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt(pruneLength: 240)
+          excerpt(pruneLength: 150)
           timeToRead
         }
       }

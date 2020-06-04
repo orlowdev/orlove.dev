@@ -1,7 +1,6 @@
 ---
 title: 'Meeting notes'
 date: '2020-06-03'
-category: 'remote work'
 tags:
   - efficiency
   - communication

@@ -13,7 +13,17 @@ export const Label = styled.span<ILabelProps>`
   margin-bottom: 8px;
   text-transform: lowercase;
 
+  > a {
+    text-decoration: none;
+  }
+
   :last-of-type {
     margin-right: 0;
   }
+`
+
+export const LabelList = styled.div`
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 `

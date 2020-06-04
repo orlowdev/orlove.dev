@@ -6,6 +6,7 @@ import React, { FC } from 'react'
 import GatsbyImage from 'gatsby-image'
 import { Caption } from './text'
 import { CoffeeCups } from './coffee-cups'
+import { Label, LabelList } from './label'
 
 const PostLink = styled(Link)`
   text-decoration: none;
@@ -45,7 +46,8 @@ const PostDescription = styled.div`
   margin-top: 1rem;
 
   @media screen and (min-width: 1000px) {
-    width: calc(100% - 220px);
+    height: 240px;
+    width: calc(100% - 240px);
   }
 `
 
@@ -76,6 +78,13 @@ export const PostPreview: FC<IPostPreviewProps> = ({ post }) => (
       <p>
         {post.excerpt} <Link to={post.fields.slug}>Read more</Link>
       </p>
+      <LabelList>
+        {post.frontmatter.tags.slice(0, 3).map((tag) => (
+          <Label key={tag}>
+            <Link to={`/tags/${tag}`}>#{tag}</Link>
+          </Label>
+        ))}
+      </LabelList>
     </PostDescription>
   </PostWrapper>
 )

@@ -7,7 +7,7 @@ import { PageContentsQuery } from '../../graphql-types'
 import { defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader'
 import { Caption } from '../components/text'
 import { BlogPost } from '../models/blog-post'
-import { Label } from '../components/label'
+import { Label, LabelList } from '../components/label'
 import Seo from '../components/seo'
 
 defineCustomElements()
@@ -28,12 +28,6 @@ const Jukebox = styled.iframe`
   border: 0;
   border-radius: 4px;
   background: transparent;
-`
-
-const LabelList = styled.div`
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
 `
 
 const LogoLol = styled.p`
@@ -85,7 +79,6 @@ const PageTemplate: FC<{ data: PageContentsQuery }> = ({ data }) => {
 
           {post.frontmatter.tags && (
             <LabelList>
-              <Label>{post.frontmatter.category}</Label>
               {post.frontmatter.tags.map((tag, i) => (
                 <Label key={tag || i}>
                   <Link to={`/tags/${tag}`}>#{tag}</Link>
@@ -111,7 +104,6 @@ export const query = graphql`
       frontmatter {
         title
         song
-        category
         tags
         description
         image {
