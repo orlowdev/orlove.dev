@@ -22,7 +22,6 @@ module.exports = {
     "gatsby-plugin-typescript",
     "gatsby-plugin-graphql-codegen",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-netlify",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-filesystem",
@@ -133,6 +132,17 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-168545679-1",
+        anonymize: true,
+        respectDNT: true,
+        pageTransitionDelay: 0,
+        defer: false,
+        cookieDomain: "orlove.dev",
+      },
+    },
+    {
       resolve: "gatsby-plugin-manifest",
       options: {
         name: "Orlove.dev",
@@ -149,17 +159,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-168545679-1",
-        anonymize: true,
-        respectDNT: true,
-        pageTransitionDelay: 0,
-        defer: false,
-        cookieDomain: "orlove.dev",
-      },
-    },
-    {
       resolve: "gatsby-plugin-offline",
       options: {
         workboxConfig: {
@@ -167,14 +166,7 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        workboxConfig: {
-          globPatterns: ["**/*"],
-        },
-      },
-    },
+    "gatsby-plugin-netlify",
     {
       resolve: "gatsby-plugin-nprogress",
       options: {
