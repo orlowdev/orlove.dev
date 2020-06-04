@@ -1,6 +1,5 @@
 ---
 title: Contacts
-slug: contacts
 ---
 
 ## Reach me out on social media

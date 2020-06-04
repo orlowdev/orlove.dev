@@ -694,7 +694,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___description'
-  | 'childMarkdownRemark___frontmatter___slug'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___category'
   | 'childMarkdownRemark___frontmatter___tags'
@@ -1508,7 +1507,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___description'
-  | 'frontmatter___slug'
   | 'frontmatter___date'
   | 'frontmatter___category'
   | 'frontmatter___tags'
@@ -1704,7 +1702,6 @@ export type MarkdownRemarkFilterInput = {
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  slug?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
   category?: Maybe<Scalars['String']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
@@ -1725,7 +1722,6 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
-  slug?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   tags?: Maybe<StringQueryOperatorInput>;
@@ -3274,7 +3270,7 @@ export type PageContentsQueryVariables = {
 export type PageContentsQuery = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'html'>
     & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'song' | 'category' | 'tags' | 'description' | 'imageAlt'>
+      Pick<MarkdownRemarkFrontmatter, 'title' | 'song' | 'category' | 'tags' | 'description' | 'imageAlt'>
       & { image?: Maybe<{ sharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluid_WithWebpFragment>, fixed?: Maybe<GatsbyImageSharpFixed_WithWebpFragment> }> }> }
     )> }
   )> };

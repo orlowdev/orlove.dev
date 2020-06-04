@@ -108,7 +108,6 @@ export const query = graphql`
       }
       frontmatter {
         title
-        slug
         song
         category
         tags
