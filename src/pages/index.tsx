@@ -6,7 +6,11 @@ import { BlogPost } from '../models/blog-post'
 import Seo from '../components/seo'
 import { PostList } from '../components/post-list'
 
-const IndexPage: FC<{ data: BlogPostsQuery }> = ({ data }) => {
+interface IIndexPageProps {
+  data: BlogPostsQuery
+}
+
+const IndexPage: FC<IIndexPageProps> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map((edge) => BlogPost(edge.node))
 
   return (
@@ -18,6 +22,8 @@ const IndexPage: FC<{ data: BlogPostsQuery }> = ({ data }) => {
     </>
   )
 }
+
+export default IndexPage
 
 export const query = graphql`
   query BlogPosts {
@@ -33,5 +39,3 @@ export const query = graphql`
     }
   }
 `
-
-export default IndexPage

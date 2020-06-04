@@ -1,12 +1,12 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { Color } from './global-styles'
-import { IBlogPost } from '../models/blog-post'
-import React, { FC } from 'react'
 import GatsbyImage from 'gatsby-image'
-import { Caption } from './text'
+import React, { FC } from 'react'
+import { IBlogPost } from '../models/blog-post'
 import { CoffeeCups } from './coffee-cups'
-import { Label, LabelList } from './label'
+import { Color } from './global-styles'
+import { Labels } from './labels'
+import { Caption } from './text'
 
 const PostLink = styled(Link)`
   text-decoration: none;
@@ -78,13 +78,7 @@ export const PostPreview: FC<IPostPreviewProps> = ({ post }) => (
       <p>
         {post.excerpt} <Link to={post.fields.slug}>Read post</Link>
       </p>
-      <LabelList>
-        {post.frontmatter.tags.slice(0, 3).map((tag) => (
-          <Label key={tag}>
-            <Link to={`/tags/${tag}`}>#{tag}</Link>
-          </Label>
-        ))}
-      </LabelList>
+      <Labels from={post.frontmatter.tags} limit={3} />
     </PostDescription>
   </PostWrapper>
 )

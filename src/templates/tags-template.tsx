@@ -8,10 +8,10 @@ import { BlogPost } from '../models/blog-post'
 import Seo from '../components/seo'
 
 interface ITagsTemplateProps {
+  data: TagsContentQuery
   pageContext: {
     tag: string
   }
-  data: TagsContentQuery
 }
 
 const Tags: FC<ITagsTemplateProps> = ({ pageContext, data }) => (

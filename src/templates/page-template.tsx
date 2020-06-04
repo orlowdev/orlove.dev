@@ -1,14 +1,14 @@
-import React, { FC } from 'react'
-import { graphql, Link } from 'gatsby'
-import { Layout } from '../components/layout'
-import styled from '@emotion/styled'
-import BackgroundImage from 'gatsby-background-image'
-import { PageContentsQuery } from '../../graphql-types'
 import { defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader'
+import styled from '@emotion/styled'
+import { graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
+import React, { FC } from 'react'
+import { PageContentsQuery } from '../../graphql-types'
+import { Labels } from '../components/labels'
+import { Layout } from '../components/layout'
+import Seo from '../components/seo'
 import { Caption } from '../components/text'
 import { BlogPost } from '../models/blog-post'
-import { Label, LabelList } from '../components/label'
-import Seo from '../components/seo'
 
 defineCustomElements()
 
@@ -77,15 +77,7 @@ const PageTemplate: FC<{ data: PageContentsQuery }> = ({ data }) => {
 
           <h1>{post.frontmatter.title}</h1>
 
-          {post.frontmatter.tags && (
-            <LabelList>
-              {post.frontmatter.tags.map((tag, i) => (
-                <Label key={tag || i}>
-                  <Link to={`/tags/${tag}`}>#{tag}</Link>
-                </Label>
-              ))}
-            </LabelList>
-          )}
+          <Labels from={post.frontmatter.tags} />
 
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </PageWrapper>
