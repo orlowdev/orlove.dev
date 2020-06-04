@@ -3,14 +3,9 @@ import { graphql } from 'gatsby'
 import { Layout } from '../components/layout'
 import { BlogPostsQuery } from '../../graphql-types'
 import { BlogPost } from '../models/blog-post'
-import styled from '@emotion/styled'
 import Seo from '../components/seo'
 import { PostPreview } from '../components/post-preview'
-
-const BlogTitle = styled.h1`
-  font-size: 3rem;
-  margin: 3rem 0;
-`
+import { PostListTitle } from '../components/text'
 
 const IndexPage: FC<{ data: BlogPostsQuery }> = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map((edge) => BlogPost(edge.node))
@@ -19,7 +14,7 @@ const IndexPage: FC<{ data: BlogPostsQuery }> = ({ data }) => {
     <>
       <Seo />
       <Layout>
-        <BlogTitle>||l Blog</BlogTitle>
+        <PostListTitle>||l Blog</PostListTitle>
 
         {posts.map((post) => (
           <PostPreview post={post} key={post.id} />
