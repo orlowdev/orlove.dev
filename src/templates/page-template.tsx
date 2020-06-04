@@ -113,7 +113,7 @@ export const query = graphql`
         description
         image {
           sharp: childImageSharp {
-            fluid(quality: 90, duotone: { highlight: "#F0A6CA", shadow: "#9C89B8" }) {
+            fluid(quality: 100, duotone: { highlight: "#F0A6CA", shadow: "#9C89B8" }) {
               ...GatsbyImageSharpFluid_withWebp
             }
             fixed(quality: 90, width: 1200, height: 630) {
