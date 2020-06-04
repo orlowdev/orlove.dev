@@ -29,9 +29,7 @@ const Seo: FC<ISeoProps> = ({
     query FixedImages {
       defaultImage: file(relativePath: { eq: "assets/img/og.png" }) {
         sharp: childImageSharp {
-          fixed(width: 1200, height: 630) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+          ...OpenGraphImage
         }
       }
     }
