@@ -1,66 +1,66 @@
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = "https://orlove.dev",
+  URL: NETLIFY_SITE_URL = 'https://orlove.dev',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env;
-const isNetlifyProduction = NETLIFY_ENV === "production";
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+} = process.env
+const isNetlifyProduction = NETLIFY_ENV === 'production'
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
 module.exports = {
   siteMetadata: {
     siteUrl,
-    title: "Orlove.dev | Here I write about random stuff",
+    title: 'Here I write about random stuff',
     description: "I don't have a third person bio.",
     author: {
-      name: "Sergei Orlov",
-      bio: "I code a bit."
+      name: 'Sergei Orlov',
+      bio: 'I code a bit.',
     },
   },
   plugins: [
-    "gatsby-plugin-emotion",
-    "gatsby-plugin-typescript",
-    "gatsby-plugin-graphql-codegen",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-graphql-codegen',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
+        name: 'pages',
         path: `${__dirname}/src/pages/`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "content",
+        name: 'content',
         path: `${__dirname}/content/`,
       },
     },
     {
-      resolve: "gatsby-transformer-remark",
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          "gatsby-remark-autolink-headers",
-          "gatsby-plugin-catch-links",
-          "gatsby-remark-embedder",
+          'gatsby-remark-autolink-headers',
+          'gatsby-plugin-catch-links',
+          'gatsby-remark-embedder',
           {
-            resolve: "gatsby-remark-highlight-code",
+            resolve: 'gatsby-remark-highlight-code',
             options: {
-              terminal: "carbon",
-              theme: "one-light",
+              terminal: 'carbon',
+              theme: 'one-light',
               lineNumbers: true,
             },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
               target: null,
-              rel: "nofollow",
+              rel: 'nofollow',
             },
           },
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 2048,
               showCaptions: true,
@@ -87,15 +87,15 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                });
-              });
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                })
+              })
             },
             query: `
               {
@@ -117,62 +117,62 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "||l RSS Feed",
+            output: '/rss.xml',
+            title: '||l RSS Feed',
           },
         ],
       },
     },
     {
-      resolve: "gatsby-plugin-typography",
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: "src/typography.ts",
+        pathToConfigModule: 'src/typography.ts',
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-168545679-1",
+        trackingId: 'UA-168545679-1',
         anonymize: true,
         respectDNT: true,
         pageTransitionDelay: 0,
         defer: false,
-        cookieDomain: "orlove.dev",
+        cookieDomain: 'orlove.dev',
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Orlove.dev",
-        short_name: "||love",
-        start_url: "/",
-        background_color: "#f6f6f6",
-        theme_color: "#9C89B8",
-        icon: "content/assets/img/favicon.png",
-        display: "standalone",
-        cache_busting_mode: "none",
+        name: 'Orlove.dev',
+        short_name: '||love',
+        start_url: '/',
+        background_color: '#f6f6f6',
+        theme_color: '#9C89B8',
+        icon: 'content/assets/img/favicon.png',
+        display: 'standalone',
+        cache_busting_mode: 'none',
         icon_options: {
-          purpose: "maskable",
+          purpose: 'maskable',
         },
       },
     },
     {
-      resolve: "gatsby-plugin-offline",
+      resolve: 'gatsby-plugin-offline',
       options: {
         workboxConfig: {
-          globPatterns: ["**/*"],
+          globPatterns: ['**/*'],
         },
       },
     },
-    "gatsby-plugin-netlify",
+    'gatsby-plugin-netlify',
     {
-      resolve: "gatsby-plugin-nprogress",
+      resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: "#9c89b8",
+        color: '#9c89b8',
         showSpinner: true,
       },
     },
   ],
-};
+}

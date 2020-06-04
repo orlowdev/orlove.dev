@@ -16,7 +16,7 @@ interface ITagsTemplateProps {
 
 const Tags: FC<ITagsTemplateProps> = ({ pageContext, data }) => (
   <>
-    <Seo title={`#${pageContext.tag} posts | Orlove.dev`} />
+    <Seo title={`#${pageContext.tag} posts`} />
     <Layout>
       <PostList
         posts={data.allMarkdownRemark.edges.map((e) => BlogPost(e.node))}

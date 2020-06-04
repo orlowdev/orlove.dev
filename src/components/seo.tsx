@@ -44,7 +44,7 @@ const Seo: FC<ISeoProps> = ({
   } = useSiteMetadata()
 
   const metaDescription = description || defaultDescription
-  const metaTitle = title || defaultTitle
+  const metaTitle = (title || defaultTitle).concat(' | Orlove.dev ||l')
   const metaUrl = url || defaultUrl
   const metaImage = image || defaultImage.sharp.fixed
 
