@@ -1,3 +1,3 @@
 # orlove.dev
 
-Here I write about random stuff
+Here I write about random stuff.

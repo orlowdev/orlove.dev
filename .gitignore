@@ -1,6 +1,8 @@
 # IntelliJ
 .idea
 
+.DS_Store
+
 # Gatsby
 .cache
 public
