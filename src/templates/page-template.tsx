@@ -32,6 +32,8 @@ const Jukebox = styled.iframe`
 
 const LabelList = styled.div`
   margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 `
 
 const LogoLol = styled.p`
