@@ -4,13 +4,13 @@ import { Layout } from '../components/layout'
 import styled from '@emotion/styled'
 import BackgroundImage from 'gatsby-background-image'
 import { PageContentsQuery } from '../../graphql-types'
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader'
+import { defineCustomElements } from '@deckdeckgo/highlight-code/dist/loader'
 import { Caption } from '../components/text'
 import { BlogPost } from '../models/blog-post'
 import { Label } from '../components/label'
 import Seo from '../components/seo'
 
-deckDeckGoHighlightElement()
+defineCustomElements()
 
 const Hero = styled(BackgroundImage)`
   width: 100%;
