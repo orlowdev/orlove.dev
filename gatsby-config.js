@@ -22,6 +22,7 @@ module.exports = {
     "gatsby-plugin-typescript",
     "gatsby-plugin-graphql-codegen",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-netlify",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-filesystem",
