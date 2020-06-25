@@ -1,10 +1,16 @@
-import { Link } from 'gatsby'
-import { ExternalRoute, InternalRoute } from '../routes'
-import React from 'react'
 import styled from '@emotion/styled'
-import { Color } from './global-styles'
+import { Link } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { GatsbyInlineIcon, GitHubBlockIcon, InstagramBlockIcon, TwitterBlockIcon, FacebookBlockIcon } from './icons'
+import React from 'react'
+import { ExternalRoute, InternalRoute } from '../routes'
+import { Color } from './global-styles'
+import {
+  FacebookBlockIcon,
+  GatsbyInlineIcon,
+  GitHubBlockIcon,
+  InstagramBlockIcon,
+  TwitterBlockIcon,
+} from './icons'
 
 const StyledFooter = styled.footer`
   background: #333;
