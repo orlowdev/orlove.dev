@@ -73,11 +73,11 @@ const Seo: FC<ISeoProps> = ({
     },
     {
       name: 'twitter:site',
-      content: '@_or_love',
+      content: '@orlove_dev',
     },
     {
       name: 'twitter:creator',
-      content: '@_or_love',
+      content: '@orlove_dev',
     },
     {
       name: 'twitter:title',
