@@ -6,6 +6,8 @@ import React from 'react'
 // @ts-ignore
 import TwitterIcon from 'simple-icons/icons/twitter'
 // @ts-ignore
+import FacebookIcon from 'simple-icons/icons/facebook'
+// @ts-ignore
 import GitHubIcon from 'simple-icons/icons/github'
 // @ts-ignore
 import InstagramIcon from 'simple-icons/icons/instagram'
@@ -42,6 +44,12 @@ const InlineIcon = styled.span`
 export const TwitterBlockIcon = () => (
   <OutboundLink href={ExternalRoute.TWITTER} rel="nofollow">
     <BlockIcon dangerouslySetInnerHTML={{ __html: TwitterIcon.svg }} />
+  </OutboundLink>
+)
+
+export const FacebookBlockIcon = () => (
+  <OutboundLink href={ExternalRoute.FACEBOOK} rel="nofollow">
+    <BlockIcon dangerouslySetInnerHTML={{ __html: FacebookIcon.svg }} />
   </OutboundLink>
 )
 

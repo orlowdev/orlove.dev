@@ -4,7 +4,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Color } from './global-styles'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { GatsbyInlineIcon, GitHubBlockIcon, InstagramBlockIcon, TwitterBlockIcon } from './icons'
+import { GatsbyInlineIcon, GitHubBlockIcon, InstagramBlockIcon, TwitterBlockIcon, FacebookBlockIcon } from './icons'
 
 const StyledFooter = styled.footer`
   background: #333;
@@ -90,9 +90,10 @@ export const Footer = () => {
         </p>
       </div>
       <IconList>
+        <GitHubBlockIcon />
         <TwitterBlockIcon />
         <InstagramBlockIcon />
-        <GitHubBlockIcon />
+        <FacebookBlockIcon />
       </IconList>
       <Row>
         <Nav>
@@ -130,6 +131,11 @@ export const Footer = () => {
           <h4>Social Media</h4>
           <ul>
             <li>
+              <OutboundLink rel="nofollow" href={ExternalRoute.GITHUB}>
+                GitHub
+              </OutboundLink>
+            </li>
+            <li>
               <OutboundLink rel="nofollow" href={ExternalRoute.TWITTER}>
                 Twitter
               </OutboundLink>
@@ -140,8 +146,8 @@ export const Footer = () => {
               </OutboundLink>
             </li>
             <li>
-              <OutboundLink rel="nofollow" href={ExternalRoute.GITHUB}>
-                GitHub
+              <OutboundLink rel="nofollow" href={ExternalRoute.FACEBOOK}>
+                Facebook
               </OutboundLink>
             </li>
           </ul>
