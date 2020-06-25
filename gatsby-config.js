@@ -3,6 +3,7 @@ const {
   URL: NETLIFY_SITE_URL = 'https://orlove.dev',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
+  GITHUB_TOKEN,
 } = process.env
 const isNetlifyProduction = NETLIFY_ENV === 'production'
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
@@ -23,6 +24,37 @@ module.exports = {
     'gatsby-plugin-graphql-codegen',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-source-github-api',
+      options: {
+        token: GITHUB_TOKEN,
+        variables: {},
+        graphQLQuery: `query {
+          user(login: "priestine") {
+            repositories(isFork: false, first: 50, isLocked: false, orderBy: { field: UPDATED_AT, direction: DESC }) {
+              nodes {
+                description
+                licenseInfo {
+                  name
+                }
+                nameWithOwner
+                url
+                forkCount
+                stargazers {
+                  totalCount
+                }
+                issues(states: OPEN) {
+                  totalCount
+                }
+                pullRequests(states: OPEN) {
+                  totalCount
+                }
+              }
+            }
+          }
+        }`,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

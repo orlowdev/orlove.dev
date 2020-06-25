@@ -857,6 +857,326 @@ export type FloatQueryOperatorInput = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
+export type GithubData = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  data?: Maybe<GithubDataData>;
+  rawResult?: Maybe<GithubDataRawResult>;
+};
+
+export type GithubDataConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GithubDataEdge>;
+  nodes: Array<GithubData>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GithubDataGroupConnection>;
+};
+
+
+export type GithubDataConnectionDistinctArgs = {
+  field: GithubDataFieldsEnum;
+};
+
+
+export type GithubDataConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GithubDataFieldsEnum;
+};
+
+export type GithubDataData = {
+  user?: Maybe<GithubDataDataUser>;
+};
+
+export type GithubDataDataFilterInput = {
+  user?: Maybe<GithubDataDataUserFilterInput>;
+};
+
+export type GithubDataDataUser = {
+  repositories?: Maybe<GithubDataDataUserRepositories>;
+};
+
+export type GithubDataDataUserFilterInput = {
+  repositories?: Maybe<GithubDataDataUserRepositoriesFilterInput>;
+};
+
+export type GithubDataDataUserRepositories = {
+  nodes?: Maybe<Array<Maybe<GithubDataDataUserRepositoriesNodes>>>;
+};
+
+export type GithubDataDataUserRepositoriesFilterInput = {
+  nodes?: Maybe<GithubDataDataUserRepositoriesNodesFilterListInput>;
+};
+
+export type GithubDataDataUserRepositoriesNodes = {
+  description?: Maybe<Scalars['String']>;
+  licenseInfo?: Maybe<GithubDataDataUserRepositoriesNodesLicenseInfo>;
+  nameWithOwner?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  forkCount?: Maybe<Scalars['Int']>;
+  stargazers?: Maybe<GithubDataDataUserRepositoriesNodesStargazers>;
+  issues?: Maybe<GithubDataDataUserRepositoriesNodesIssues>;
+  pullRequests?: Maybe<GithubDataDataUserRepositoriesNodesPullRequests>;
+};
+
+export type GithubDataDataUserRepositoriesNodesFilterInput = {
+  description?: Maybe<StringQueryOperatorInput>;
+  licenseInfo?: Maybe<GithubDataDataUserRepositoriesNodesLicenseInfoFilterInput>;
+  nameWithOwner?: Maybe<StringQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  forkCount?: Maybe<IntQueryOperatorInput>;
+  stargazers?: Maybe<GithubDataDataUserRepositoriesNodesStargazersFilterInput>;
+  issues?: Maybe<GithubDataDataUserRepositoriesNodesIssuesFilterInput>;
+  pullRequests?: Maybe<GithubDataDataUserRepositoriesNodesPullRequestsFilterInput>;
+};
+
+export type GithubDataDataUserRepositoriesNodesFilterListInput = {
+  elemMatch?: Maybe<GithubDataDataUserRepositoriesNodesFilterInput>;
+};
+
+export type GithubDataDataUserRepositoriesNodesIssues = {
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GithubDataDataUserRepositoriesNodesIssuesFilterInput = {
+  totalCount?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GithubDataDataUserRepositoriesNodesLicenseInfo = {
+  name?: Maybe<Scalars['String']>;
+};
+
+export type GithubDataDataUserRepositoriesNodesLicenseInfoFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GithubDataDataUserRepositoriesNodesPullRequests = {
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GithubDataDataUserRepositoriesNodesPullRequestsFilterInput = {
+  totalCount?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GithubDataDataUserRepositoriesNodesStargazers = {
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GithubDataDataUserRepositoriesNodesStargazersFilterInput = {
+  totalCount?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GithubDataEdge = {
+  next?: Maybe<GithubData>;
+  node: GithubData;
+  previous?: Maybe<GithubData>;
+};
+
+export type GithubDataFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'data___user___repositories___nodes';
+
+export type GithubDataFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  data?: Maybe<GithubDataDataFilterInput>;
+  rawResult?: Maybe<GithubDataRawResultFilterInput>;
+};
+
+export type GithubDataGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<GithubDataEdge>;
+  nodes: Array<GithubData>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GithubDataRawResult = {
+  data?: Maybe<GithubDataRawResultData>;
+};
+
+export type GithubDataRawResultData = {
+  user?: Maybe<GithubDataRawResultDataUser>;
+};
+
+export type GithubDataRawResultDataFilterInput = {
+  user?: Maybe<GithubDataRawResultDataUserFilterInput>;
+};
+
+export type GithubDataRawResultDataUser = {
+  repositories?: Maybe<GithubDataRawResultDataUserRepositories>;
+};
+
+export type GithubDataRawResultDataUserFilterInput = {
+  repositories?: Maybe<GithubDataRawResultDataUserRepositoriesFilterInput>;
+};
+
+export type GithubDataRawResultDataUserRepositories = {
+  nodes?: Maybe<Array<Maybe<GithubDataRawResultDataUserRepositoriesNodes>>>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesFilterInput = {
+  nodes?: Maybe<GithubDataRawResultDataUserRepositoriesNodesFilterListInput>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodes = {
+  description?: Maybe<Scalars['String']>;
+  licenseInfo?: Maybe<GithubDataRawResultDataUserRepositoriesNodesLicenseInfo>;
+  nameWithOwner?: Maybe<Scalars['String']>;
+  url?: Maybe<Scalars['String']>;
+  forkCount?: Maybe<Scalars['Int']>;
+  stargazers?: Maybe<GithubDataRawResultDataUserRepositoriesNodesStargazers>;
+  issues?: Maybe<GithubDataRawResultDataUserRepositoriesNodesIssues>;
+  pullRequests?: Maybe<GithubDataRawResultDataUserRepositoriesNodesPullRequests>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesFilterInput = {
+  description?: Maybe<StringQueryOperatorInput>;
+  licenseInfo?: Maybe<GithubDataRawResultDataUserRepositoriesNodesLicenseInfoFilterInput>;
+  nameWithOwner?: Maybe<StringQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  forkCount?: Maybe<IntQueryOperatorInput>;
+  stargazers?: Maybe<GithubDataRawResultDataUserRepositoriesNodesStargazersFilterInput>;
+  issues?: Maybe<GithubDataRawResultDataUserRepositoriesNodesIssuesFilterInput>;
+  pullRequests?: Maybe<GithubDataRawResultDataUserRepositoriesNodesPullRequestsFilterInput>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesFilterListInput = {
+  elemMatch?: Maybe<GithubDataRawResultDataUserRepositoriesNodesFilterInput>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesIssues = {
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesIssuesFilterInput = {
+  totalCount?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesLicenseInfo = {
+  name?: Maybe<Scalars['String']>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesLicenseInfoFilterInput = {
+  name?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesPullRequests = {
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesPullRequestsFilterInput = {
+  totalCount?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesStargazers = {
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+export type GithubDataRawResultDataUserRepositoriesNodesStargazersFilterInput = {
+  totalCount?: Maybe<IntQueryOperatorInput>;
+};
+
+export type GithubDataRawResultFilterInput = {
+  data?: Maybe<GithubDataRawResultDataFilterInput>;
+};
+
+export type GithubDataSortInput = {
+  fields?: Maybe<Array<Maybe<GithubDataFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type ImageCropFocus = 
   | 'CENTER'
   | 'NORTH'
@@ -1815,6 +2135,8 @@ export type Query = {
   allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
+  githubData?: Maybe<GithubData>;
+  allGithubData: GithubDataConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -1952,6 +2274,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2019,6 +2343,24 @@ export type QueryAllImageSharpArgs = {
 };
 
 
+export type QueryGithubDataArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  data?: Maybe<GithubDataDataFilterInput>;
+  rawResult?: Maybe<GithubDataRawResultFilterInput>;
+};
+
+
+export type QueryAllGithubDataArgs = {
+  filter?: Maybe<GithubDataFilterInput>;
+  sort?: Maybe<GithubDataSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QuerySiteBuildMetadataArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -2063,6 +2405,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Date']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2073,6 +2417,14 @@ export type Site = Node & {
 
 
 export type SiteBuildTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type SitePortArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -2267,6 +2619,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___description'
   | 'siteMetadata___author___name'
   | 'siteMetadata___author___bio'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2359,6 +2713,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<DateQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2575,6 +2931,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___plugins___browserAPIs'
   | 'pluginCreator___pluginOptions___plugins___ssrAPIs'
   | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
+  | 'pluginCreator___pluginOptions___token'
+  | 'pluginCreator___pluginOptions___graphQLQuery'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___terminal'
@@ -2583,16 +2941,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___rel'
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___showCaptions'
-  | 'pluginCreator___pluginOptions___pathPrefix'
-  | 'pluginCreator___pluginOptions___wrapperStyle'
-  | 'pluginCreator___pluginOptions___backgroundColor'
-  | 'pluginCreator___pluginOptions___linkImagesToOriginal'
-  | 'pluginCreator___pluginOptions___markdownCaptions'
-  | 'pluginCreator___pluginOptions___withWebp'
-  | 'pluginCreator___pluginOptions___tracedSVG'
-  | 'pluginCreator___pluginOptions___loading'
-  | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
-  | 'pluginCreator___pluginOptions___disableBgImage'
   | 'pluginCreator___pluginOptions___query'
   | 'pluginCreator___pluginOptions___feeds'
   | 'pluginCreator___pluginOptions___feeds___query'
@@ -2817,20 +3165,12 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___pluginOptions___rel'
   | 'pluginOptions___plugins___pluginOptions___maxWidth'
   | 'pluginOptions___plugins___pluginOptions___showCaptions'
-  | 'pluginOptions___plugins___pluginOptions___pathPrefix'
-  | 'pluginOptions___plugins___pluginOptions___wrapperStyle'
-  | 'pluginOptions___plugins___pluginOptions___backgroundColor'
-  | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
-  | 'pluginOptions___plugins___pluginOptions___markdownCaptions'
-  | 'pluginOptions___plugins___pluginOptions___withWebp'
-  | 'pluginOptions___plugins___pluginOptions___tracedSVG'
-  | 'pluginOptions___plugins___pluginOptions___loading'
-  | 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha'
-  | 'pluginOptions___plugins___pluginOptions___disableBgImage'
   | 'pluginOptions___plugins___nodeAPIs'
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___ssrAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
+  | 'pluginOptions___token'
+  | 'pluginOptions___graphQLQuery'
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___terminal'
@@ -2839,16 +3179,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___rel'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___showCaptions'
-  | 'pluginOptions___pathPrefix'
-  | 'pluginOptions___wrapperStyle'
-  | 'pluginOptions___backgroundColor'
-  | 'pluginOptions___linkImagesToOriginal'
-  | 'pluginOptions___markdownCaptions'
-  | 'pluginOptions___withWebp'
-  | 'pluginOptions___tracedSVG'
-  | 'pluginOptions___loading'
-  | 'pluginOptions___disableBgImageOnAlpha'
-  | 'pluginOptions___disableBgImage'
   | 'pluginOptions___query'
   | 'pluginOptions___feeds'
   | 'pluginOptions___feeds___query'
@@ -2989,6 +3319,8 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
+  token?: Maybe<Scalars['String']>;
+  graphQLQuery?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   terminal?: Maybe<Scalars['String']>;
@@ -2997,16 +3329,6 @@ export type SitePluginPluginOptions = {
   rel?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
   showCaptions?: Maybe<Scalars['Boolean']>;
-  pathPrefix?: Maybe<Scalars['String']>;
-  wrapperStyle?: Maybe<Scalars['String']>;
-  backgroundColor?: Maybe<Scalars['String']>;
-  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
-  markdownCaptions?: Maybe<Scalars['Boolean']>;
-  withWebp?: Maybe<Scalars['Boolean']>;
-  tracedSVG?: Maybe<Scalars['Boolean']>;
-  loading?: Maybe<Scalars['String']>;
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
-  disableBgImage?: Maybe<Scalars['Boolean']>;
   query?: Maybe<Scalars['String']>;
   feeds?: Maybe<Array<Maybe<SitePluginPluginOptionsFeeds>>>;
   pathToConfigModule?: Maybe<Scalars['String']>;
@@ -3051,6 +3373,8 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 
 export type SitePluginPluginOptionsFilterInput = {
   plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
+  token?: Maybe<StringQueryOperatorInput>;
+  graphQLQuery?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   terminal?: Maybe<StringQueryOperatorInput>;
@@ -3059,16 +3383,6 @@ export type SitePluginPluginOptionsFilterInput = {
   rel?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   showCaptions?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
-  wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  backgroundColor?: Maybe<StringQueryOperatorInput>;
-  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
-  withWebp?: Maybe<BooleanQueryOperatorInput>;
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
-  loading?: Maybe<StringQueryOperatorInput>;
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
   query?: Maybe<StringQueryOperatorInput>;
   feeds?: Maybe<SitePluginPluginOptionsFeedsFilterListInput>;
   pathToConfigModule?: Maybe<StringQueryOperatorInput>;
@@ -3138,16 +3452,6 @@ export type SitePluginPluginOptionsPluginsPluginOptions = {
   rel?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
   showCaptions?: Maybe<Scalars['Boolean']>;
-  pathPrefix?: Maybe<Scalars['String']>;
-  wrapperStyle?: Maybe<Scalars['String']>;
-  backgroundColor?: Maybe<Scalars['String']>;
-  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
-  markdownCaptions?: Maybe<Scalars['Boolean']>;
-  withWebp?: Maybe<Scalars['Boolean']>;
-  tracedSVG?: Maybe<Scalars['Boolean']>;
-  loading?: Maybe<Scalars['String']>;
-  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
-  disableBgImage?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
@@ -3157,16 +3461,6 @@ export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   rel?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   showCaptions?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
-  wrapperStyle?: Maybe<StringQueryOperatorInput>;
-  backgroundColor?: Maybe<StringQueryOperatorInput>;
-  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
-  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
-  withWebp?: Maybe<BooleanQueryOperatorInput>;
-  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
-  loading?: Maybe<StringQueryOperatorInput>;
-  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
-  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsWorkboxConfig = {
@@ -3262,7 +3556,10 @@ export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSit
 export type BlogPostsQueryVariables = {};
 
 
-export type BlogPostsQuery = { allMarkdownRemark: { edges: Array<{ node: PostPreviewFragment }> } };
+export type BlogPostsQuery = { allMarkdownRemark: { edges: Array<{ node: PostPreviewFragment }> }, githubData?: Maybe<{ data?: Maybe<{ user?: Maybe<{ repositories?: Maybe<{ nodes?: Maybe<Array<Maybe<(
+            Pick<GithubDataDataUserRepositoriesNodes, 'description' | 'nameWithOwner' | 'url' | 'forkCount'>
+            & { issues?: Maybe<Pick<GithubDataDataUserRepositoriesNodesIssues, 'totalCount'>>, pullRequests?: Maybe<Pick<GithubDataDataUserRepositoriesNodesPullRequests, 'totalCount'>>, stargazers?: Maybe<Pick<GithubDataDataUserRepositoriesNodesStargazers, 'totalCount'>> }
+          )>>> }> }> }> }> };
 
 export type PageContentsQueryVariables = {
   slug: Scalars['String'];
