@@ -114,10 +114,12 @@ Of course, these examples are completely made up and cannot ever happen. Or can 
 - Be cautious about "small additions" to requirements
 - Stay in sync with the main sources of NFRs - business, stakeholders, architecture, and implementation
 - Understand the context of the solution you are building
-- Create a utility tree [^6]
+- Create a utility tree
 - When working on fulfilling FRs, always keep NFRs in mind
 - Be curious (**always be curious**)
 ```
+
+[^7]
 
 ## What to do next
 
