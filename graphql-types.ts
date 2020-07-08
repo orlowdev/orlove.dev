@@ -2931,8 +2931,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___plugins___browserAPIs'
   | 'pluginCreator___pluginOptions___plugins___ssrAPIs'
   | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
-  | 'pluginCreator___pluginOptions___token'
-  | 'pluginCreator___pluginOptions___graphQLQuery'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___terminal'
@@ -2978,6 +2976,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___color'
   | 'pluginCreator___pluginOptions___showSpinner'
   | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___pluginOptions___token'
+  | 'pluginCreator___pluginOptions___graphQLQuery'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -3189,8 +3189,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___ssrAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
-  | 'pluginOptions___token'
-  | 'pluginOptions___graphQLQuery'
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___terminal'
@@ -3236,6 +3234,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___color'
   | 'pluginOptions___showSpinner'
   | 'pluginOptions___pathCheck'
+  | 'pluginOptions___token'
+  | 'pluginOptions___graphQLQuery'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -3349,8 +3349,6 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
-  token?: Maybe<Scalars['String']>;
-  graphQLQuery?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   terminal?: Maybe<Scalars['String']>;
@@ -3393,6 +3391,8 @@ export type SitePluginPluginOptions = {
   color?: Maybe<Scalars['String']>;
   showSpinner?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
+  token?: Maybe<Scalars['String']>;
+  graphQLQuery?: Maybe<Scalars['String']>;
 };
 
 export type SitePluginPluginOptionsFeeds = {
@@ -3413,8 +3413,6 @@ export type SitePluginPluginOptionsFeedsFilterListInput = {
 
 export type SitePluginPluginOptionsFilterInput = {
   plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
-  token?: Maybe<StringQueryOperatorInput>;
-  graphQLQuery?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   terminal?: Maybe<StringQueryOperatorInput>;
@@ -3457,6 +3455,8 @@ export type SitePluginPluginOptionsFilterInput = {
   color?: Maybe<StringQueryOperatorInput>;
   showSpinner?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+  token?: Maybe<StringQueryOperatorInput>;
+  graphQLQuery?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsIcon_Options = {
@@ -3623,10 +3623,10 @@ export type Unnamed_1_QueryVariables = {};
 
 export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'siteUrl' | 'description'>> }> };
 
-export type BlogPostsQueryVariables = {};
+export type IndexPageQueryVariables = {};
 
 
-export type BlogPostsQuery = { allMarkdownRemark: { edges: Array<{ node: PostPreviewFragment }> }, githubData?: Maybe<{ data?: Maybe<{ user?: Maybe<{ repositories?: Maybe<{ nodes?: Maybe<Array<Maybe<(
+export type IndexPageQuery = { allMarkdownRemark: { edges: Array<{ node: PostPreviewFragment }> }, githubData?: Maybe<{ data?: Maybe<{ user?: Maybe<{ repositories?: Maybe<{ nodes?: Maybe<Array<Maybe<(
             Pick<GithubDataDataUserRepositoriesNodes, 'description' | 'nameWithOwner' | 'url' | 'forkCount'>
             & { issues?: Maybe<Pick<GithubDataDataUserRepositoriesNodesIssues, 'totalCount'>>, pullRequests?: Maybe<Pick<GithubDataDataUserRepositoriesNodesPullRequests, 'totalCount'>>, stargazers?: Maybe<Pick<GithubDataDataUserRepositoriesNodesStargazers, 'totalCount'>> }
           )>>> }> }> }> }> };
