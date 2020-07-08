@@ -98,7 +98,7 @@ Although NFRs seem to be non-important because of their squiggly and elusive nat
 
 NFRs are considered architecturally significant if their fullfilment is highly desired AND they require changes in the design of the system (a.k.a. architecture). The ugly truth is that, in most cases, either you need to find them yourself, or they come as a "small addition" during your tenth sprint [^6].
 
-But let's start with examples.
+Let's just see some examples.
 
 > There's a neccessity in an online store to read data from a file created by a third party service and put it to the database. But then, all of a sudden, it turns out that there might be many files from different services yet the structure is the same. And the data between files is referenced. And it may be repeated. And the ID field values are not unique because they were typed by hand. And the script reading those files will be executed in parallel to read many files at once. And there's only one database for all the files. And it's distributed. And it's Redis - yes, Redis. On two machines with 1Gb of RAM. In total. But only 10Mb are guaranteed to be free. And files are 1Gb on average.
 
