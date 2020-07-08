@@ -4,11 +4,11 @@ title: Contacts
 
 ## Reach me out on social media
 
-If you want to reach me out, [Twitter](https://twitter.com/orlove_dev) is the best place.
+If you want to reach me out, [Twitter](https://twitter.com/orlovedev) is the best place.
 
-Seriously, [tweet me something](https://twitter.com/intent/tweet?related=orlove_dev&text=Hey%20%40orlove_dev!).
+Seriously, [tweet me something](https://twitter.com/intent/tweet?related=orlovedev&text=Hey%20%40orlovedev!).
 
-I am also available on [Instagram](https://instagram.com/orlove.dev).
+I am also available on [Instagram](https://instagram.com/orlovedev) and on [Facebook](https://facebook.com/orlovedev).
 
 ## More of my stuff
 

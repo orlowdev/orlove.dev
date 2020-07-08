@@ -9,8 +9,8 @@ export enum InternalRoute {
 }
 
 export enum ExternalRoute {
-  TWITTER = 'https://twitter.com/orlove_dev',
-  INSTAGRAM = 'https://instagram.com/orlove_dev',
+  TWITTER = 'https://twitter.com/orlovedev',
+  INSTAGRAM = 'https://instagram.com/orlovedev',
   GITHUB = 'https://github.com/priestine',
-  FACEBOOK = 'https://facebook.com/orlove.dev',
+  FACEBOOK = 'https://facebook.com/orlovedev',
 }
