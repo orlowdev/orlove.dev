@@ -17,11 +17,13 @@ Hey there!
 
 We, developers, usually write code that makes users' lives easier. But how do we know that the things we do really help? Or, how do we understand what to do in the first place? Of course, we could rely on common sense or our own expectations to try to predict what users want or like, but how far we can go that way? And how to make sure that this way is not in the opposite direction from users' desires?
 
+👇 [**TL;DR**](#tldr)
+
 The weird thing here is that it's almost impossible to produce a piece of software that will be either perfect or a completely obnoxious (I'll use this word as I am unaware of a good antonym for "perfect"). Thus, with every release we make, be it the first one or the **n**th one, we will land somewhere in this multidimentional perfect-obnoxious universe. Needless to say that coordinates do not work there.
 
 ![Our software in the perfect-obnoxious universe](./understanding-desires.png)
 
-And to make steps towards perfection, we need to clearly understand which direction we should take. The biggest challenge is that we don't really know where we are. It would be great to be able to make educated guesses on which direction we should take for our next step. Even better, if we could get nice and clean instructions.
+The biggest challenge is that we don't really know where we are. It would be great to be able to make educated guesses on which direction we should take for our next step. Even better, if we could get nice and clean instructions.
 
 ## Requirement
 
