@@ -35,7 +35,6 @@ const LogoLol = styled.p`
   margin-top: 1rem;
   text-align: center;
   font-weight: 700;
-  font-family: Montserrat, sans-serif;
   color: #000;
 `
 

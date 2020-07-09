@@ -18,7 +18,6 @@ const StyledFooter = styled.footer`
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  font-family: Montserrat, sans-serif;
 
   > div > p {
     font-size: 0.8rem;

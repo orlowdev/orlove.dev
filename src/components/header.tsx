@@ -16,7 +16,6 @@ const StyledHeader = styled.header`
   box-shadow: 0 3px 15px #0000000f;
   width: 100%;
   z-index: 1000;
-  font-family: Montserrat, sans-serif;
 
   > * {
     font-size: 1rem;

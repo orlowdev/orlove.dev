@@ -17,15 +17,11 @@ export default new Typography({
   ],
   bodyColor: Color.TEXT,
   headerColor: '#000',
-  headerWeight: '700',
+  headerWeight: '900',
   googleFonts: [
     {
       name: 'Montserrat',
-      styles: ['300', '700'],
-    },
-    {
-      name: 'Questrial',
-      styles: ['400', '700'],
+      styles: ['400', '900'],
     },
     {
       name: 'Fira Code',
@@ -33,7 +29,7 @@ export default new Typography({
     },
   ],
   bodyFontFamily: [
-    'Questrial',
+    'Montserrat',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
