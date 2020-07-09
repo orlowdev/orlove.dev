@@ -157,6 +157,7 @@ with where you left off. Leave them a message, saying that there's a track to wa
 ```
 
 [^1]:
+
   **RACI** matrix, also known as **REM** (Responsibility Assignment Matrix) or **LRC** (Linear Responsibility Chart)
   is a way to describe the participation by various roles in doing things. There are four roles:
 

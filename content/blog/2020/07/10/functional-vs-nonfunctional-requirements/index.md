@@ -50,7 +50,7 @@ It is worth mentioning that requirements in software development MAY be divided 
 - quality-of-service requirements (nonfunctional requirements)
 - implementation requirements
 
-Although it makes sense, I see a flaw in this grouping: there are ***functional*** requirements, and all the others can be referred to as nonfunctional, because they are not, well, functional. That's why I'll continue with the functional vs nonfunctional thing.
+Although it makes sense, I see a flaw in this grouping: there are **_functional_** requirements, and all the others can be referred to as nonfunctional, because they are not, well, functional. That's why I'll continue with the functional vs nonfunctional thing.
 
 Now I suggest a high level overview of the two:
 
@@ -70,7 +70,7 @@ But first things first.
 
 Generally, FRs describe expectations of what should happen based on given input.
 
-They are the best fit to be presented as user stories [^4]. Of course, not all users stories are about functional requirements, but, come on, not all user stories are ***user stories*** either.
+They are the best fit to be presented as user stories [^4]. Of course, not all users stories are about functional requirements, but, come on, not all user stories are **_user stories_** either.
 
 A very basic example of a functional requirement could be:
 
