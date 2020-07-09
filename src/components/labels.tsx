@@ -9,6 +9,7 @@ export const Label = styled.span`
   margin-right: 8px;
   margin-bottom: 8px;
   text-transform: lowercase;
+  white-space: nowrap;
 
   > a {
     text-decoration: none;
@@ -23,6 +24,7 @@ export const LabelList = styled.div`
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 `
 
 interface ILabelsProps {

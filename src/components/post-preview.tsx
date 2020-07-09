@@ -33,13 +33,14 @@ const PostImageLink = styled(Link)`
 const PostImage = styled(GatsbyImage)`
   border: 0;
   border-radius: 0.25rem;
+  height: 100%;
 `
 
 const PostWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 `
 
 const PostDescription = styled.div`
@@ -78,7 +79,7 @@ export const PostPreview: FC<IPostPreviewProps> = ({ post }) => (
       <p>
         {post.excerpt} <Link to={post.fields.slug}>Read post</Link>
       </p>
-      <Labels from={post.frontmatter.tags || []} limit={3} />
+      <Labels from={post.frontmatter.tags || []} limit={4} />
     </PostDescription>
   </PostWrapper>
 )
