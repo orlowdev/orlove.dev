@@ -4,8 +4,8 @@ date: '2020-07-10'
 tags:
   - sdlc
   - communication
-  - software design
-  - software architecture
+  - software-design
+  - software-architecture
 song: https://music.apple.com/ru/album/july/1477633578?i=1477633693&l=en
 image: ./hero.png
 imageAlt: Made by me with Procreate
