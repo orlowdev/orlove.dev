@@ -5,7 +5,7 @@ tags:
   - sdlc
   - communication
   - software design
-  - 
+  - software architecture
 song: https://music.apple.com/ru/album/july/1477633578?i=1477633693&l=en
 image: ./hero.png
 imageAlt: Made by me with Procreate
@@ -15,11 +15,11 @@ published: true
 
 Hey there!
 
-We, developers, usually write code that makes users' lives easier. But how do we know that the things we do really help? Or, how do we understand what to do in the first place? Of course, we could rely on common sense or our own expectations to try to predict what users want or like, but how far we can go that way? And how to make sure that this way is not in the opposite direction from users' desires?
+We, developers, usually write code that makes lives easier. But how do we know that our things really help? Or, how to understand what to do in the first place? Of course, we could rely on common sense and our own expectations to predict what users want or like. But how far we can go? And how to make sure that we don't go in the opposite direction from users' desires?
 
 👇 [**TL;DR**](#tldr)
 
-The weird thing here is that it's almost impossible to produce a piece of software that will be either perfect or a completely obnoxious (I'll use this word as I am unaware of a good antonym for "perfect"). Thus, with every release we make, be it the first one or the **n**th one, we will land somewhere in this multidimentional perfect-obnoxious universe. Needless to say that coordinates do not work there.
+The funny thing here is that it's almost impossible to produce a piece of software that will be either perfect or a completely obnoxious (I'll use this word as I am unaware of a good antonym for "perfect"). Thus, with every single release, we land somewhere in this multidimentional perfect-obnoxious universe. Needless to say that coordinates do not work there.
 
 ![Our software in the perfect-obnoxious universe](./understanding-desires.png)
 
@@ -27,13 +27,13 @@ The biggest challenge is that we don't really know where we are. It would be gre
 
 ## Requirement
 
-We can envision many things regarding the code we produce (and we do), but there are people who are more qualified to decide what is needed and what is not. Users, of course. This is why so many websites and applications ask us if we like stuff or not, bombard us with feedback request emails, and, generally, do their best to get the most. The feedback drives improvement of the software, making it closer and closer to what users would expect from it.
+We can envision many things regarding the code we produce (and we do), but there are people who are more qualified to decide what is needed and what is not. Users, of course. This is why so many websites and applications ask us if we like stuff or not, bombard us with feedback request emails, and, generally, do their best to get the most. The feedback drives improvement of the software, making it closer to what users would expect from it.
 
-This feedback needs to be analysed and translated into a set of actionable items. The process and the people involved are out of the scope of this post. So, let's just imagine a black box that accepts information and returns us a list of _requirements_.
+The feedback needs to be analysed and translated into a set of actionable items. The process and the people involved are out of the scope of this post. So, let's just imagine a black box that accepts information and returns a list of _requirements_.
 
-To better understand, what a requirement is, let's refer to the definition:
+To better understand, what a requirement is, let's refer to the [Wikipedia](https://wikipedia.org) definition:
 
-> Requirement is a singular documented physical or functional need that a particular design, product or process aims to satisfy. - from Wikipedia
+> Requirement is a singular documented physical or functional need that a particular design, product or process aims to satisfy.
 
 Although this definition defines, it is not as complete as it could be. If you need something to be defined, and it comes from the realm of software engineering, you should take a look at BABOK [^1] IEEE [^2] 160.12-1990 [^3]:
 
@@ -50,16 +50,16 @@ It is worth mentioning that requirements in software development MAY be divided 
 - quality-of-service requirements (nonfunctional requirements)
 - implementation requirements
 
-Although it probably makes sense, I see a big flaw in this grouping: there are functional requirements, and all the rest can be referred to as nonfunctional, because they are not, well, functional. That's why I'll continue with the functional vs nonfunctional separation.
+Although it makes sense, I see a flaw in this grouping: there are ***functional*** requirements, and all the others can be referred to as nonfunctional, because they are not, well, functional. That's why I'll continue with the functional vs nonfunctional thing.
 
-Now I suggest to have a high level overview of the two compared together:
+Now I suggest a high level overview of the two:
 
 | Functional                          | Nonfunctional                                   |
 | ----------------------------------- | ----------------------------------------------- |
 | Mandatory                           | Usually Optional                                |
 | Achieving them creates a feature    | Achieving them creates a property of the system |
 | Define capabilities of the software | Define the experience of using the software     |
-| Outline use cases                   | Outline quality attributes                      |
+| Outline use cases                   | Outline quality                                 |
 | Define what the system does         | Define how the system does what it does         |
 
 The reason why this differentiation is important is that nonfunctional requirements are usually very difficult to capture. Moreover, they may significantly affect the design of the software. If they do, they are considered Architecturally Significant.
@@ -70,7 +70,7 @@ But first things first.
 
 Generally, FRs describe expectations of what should happen based on given input.
 
-They are the best fit to be presented as user stories [^4]. Of course, not all users stories are about functional requirements, but, come on, not all user stories are user stories either.
+They are the best fit to be presented as user stories [^4]. Of course, not all users stories are about functional requirements, but, come on, not all user stories are ***user stories*** either.
 
 A very basic example of a functional requirement could be:
 
@@ -84,15 +84,15 @@ Being `tasty` does not fall into the same category, though.
 
 I once had a conversation with an experienced colleague, where we discovered an interesting notion of his that nonfunctional requirements are just non-documented requirements. Can't blame them for that (backreference to user stories that are not user stories). When we have a task that clearly states that our website must be usable with screenreaders, we get into the trap of thinking that it's the functionality that we are about to add. Another thought that you might come across is that if the website must, than it is not that non-functional.
 
-But things are a bit more complicated. An inarticulate definition of a NFR could be: `NFR outlines the operation of the system rather than specific capabilities`. It's a good array of words (I'd say it's a set by it has "the" repeated twice. #1 English word, so it goes). But it does not reflect the real meaning, so let's try looking from a different angle.
+But things are a bit more complicated. An inarticulate definition of a NFR could be: `NFR outlines the operation of the system rather than specific capabilities`. It's a good array of words (I'd say it's a set but it has "the" repeated twice. #1 English word, so it goes). But it does not reflect the real meaning, so let's try looking from a different angle.
 
 When it comes to things that you cannot test by doing, there must be other ways to test them anyway. As NFRs build up software properties, they have something to do with its quality. Luckily, both in broad and narrow terms. To gather metrics and analyze _**how**_ our system behaves, we can refer to so called **Quality Attributes** (QAs, or **ilities**) [^5]. Covering all of them is a long adventure so I'll make a dedicated series on that. I just leave the reference here for the future.
 
-Identifying NFRs is hard as they are usually implied or even not considered at all. On the other side, most NFRs are known and can be applied to almost any project. But if we tried to create absolutely robust, accessible, deployable, maintainable, secure, adaptable, testable, ..., fault-tolerant software, we would never live up to the day when that software is released. Fortunately, not all QAs (hence, NFRs) are equally important in different scenarios and we can play with trade-offs. If we create a blazing fast coffee-machine, performance is a priority. If we create a super-cheap one, performance can be compromised on.
+Identifying NFRs is hard as they are usually implied or even not considered at all. On the other hand, most NFRs are well known and can be applied to almost any project. But if we tried to create absolutely **robust**, **accessible**, **deployable**, **maintainable**, **secure**, **adaptable**, **testable**, `...`, **fault-tolerant** software, we would never live up to the day when that software is released. Fortunately, not all QAs (hence, NFRs) are equally important in different scenarios and we can play with trade-offs. If we create a blazing fast coffee-machine, performance is a priority. If we create a super-cheap one, performance can be compromised on.
 
-This is why thinking about NFRs from the perspective of QAs makes their identification easier - you operate with generalized abstractions. For each specific project, the most important QAs should be picked and decomposed into specific applicable NFRs. If you don't know which ones are important, filter out the obvious odds, and then ask the black box I mentioned before.
+This is why thinking about NFRs from the perspective of QAs makes their identification easier - you operate with generalized abstractions.
 
-Although NFRs seem to be non-important because of their squiggly and elusive nature, they can effectively render the hole project useless. And this is the time to talk about the main reason for this post.
+For each specific project, the most important QAs should be picked and decomposed into specific applicable NFRs. If you don't know which ones are important, filter out the obvious odds, and then ask the black box I mentioned before. Although NFRs seem to be non-important because of their squiggly and elusive nature, they can effectively render the hole project useless. And this is the time to talk about the main reason for this post.
 
 ## Architecturally significant requirements (ASRs)
 
@@ -130,5 +130,5 @@ If you have any questions, feel free to tweet at me - [@orlovedev](https://twitt
 [^3]: **IEEE 160.12-1990** - Standard Glosssary of Software Engineering Terminology
 [^4]: **User Story** - an informal, natural language description of a feature of a software system
 [^5]: **Quality Attributes** can be referred to as realized and categorized NFRs. They group NFRs together by... well, a quality attribute. And there are dozens of them: Accessibility, Deployability, Maintainability, Security, Robustness, Maintainability, Resilience, Fault Tolerance, Usability, Adaptability, Survivability, etc.
-[^6]: **Sprint** (in Scrum) is a timeboxed iteration that has a goal and a set of objectives to be achieved by the team.
-[^7]: **Utility Tree** is a thing I'll tell you about in a different post. If you can't wait, google it. 🙂
+[^6]: **Sprint** (in Scrum) - a timeboxed iteration that has a goal and a set of objectives to be achieved by the team.
+[^7]: **Utility Tree** - a thing I'll tell you about in a different post. If you can't wait, google it. 🙂
