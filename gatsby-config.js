@@ -30,7 +30,7 @@ module.exports = {
         token: GITHUB_TOKEN,
         variables: {},
         graphQLQuery: `query {
-          user(login: "priestine") {
+          user(login: "orlovedev") {
             repositories(isFork: false, first: 50, isLocked: false, orderBy: { field: UPDATED_AT, direction: DESC }) {
               nodes {
                 description

@@ -9,6 +9,8 @@ import { Layout } from '../components/layout'
 import Seo from '../components/seo'
 import { Caption } from '../components/text'
 import { BlogPost } from '../models/blog-post'
+import { ExternalRoute } from '../routes'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 defineCustomElements()
 
@@ -40,6 +42,13 @@ const LogoLol = styled.p`
 
 const PageWrapper = styled.div`
   margin-top: 2rem;
+`
+
+const SmallText = styled.p`
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 15px 5px #0000000f;
+  font-size: 0.925rem;
 `
 
 interface IPageTemplateProps {
@@ -83,6 +92,14 @@ const PageTemplate: FC<IPageTemplateProps> = ({ data }) => {
           <Labels from={post.frontmatter.tags || []} />
 
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <SmallText>
+            I don&apos;t have comments set up on my blog, but if you would like to discuss
+            something, we can have a conversation on Twitter. If you like what you&apos;ve read, you
+            can use RSS to subscribe, or follow me on{' '}
+            <OutboundLink href={ExternalRoute.TWITTER}>Twitter</OutboundLink> to never miss new
+            articles.
+          </SmallText>
         </PageWrapper>
       </Layout>
     </>
