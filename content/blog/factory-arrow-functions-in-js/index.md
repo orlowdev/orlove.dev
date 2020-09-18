@@ -27,7 +27,7 @@ This article describes an alternative approach to instantiating objects from a t
 If you do not know what ES6 classes in JavaScript are, I suggest to read [the official MDN article about classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) but full understanding and experience with classes is not a required pre-requisite for this article. Here is a short recap:
 
 > Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are not shared with ES5 classalike semantics. © MDN
-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+> [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 Key features of ES6 classes:
 
