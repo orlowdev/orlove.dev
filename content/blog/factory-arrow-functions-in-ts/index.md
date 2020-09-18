@@ -191,9 +191,9 @@ const str: FAF<[string[]], string> = (strs: string[]) => ''
 
 > Image taken from [https://www.polygon.com](https://www.polygon.com/2014/3/6/5477080/why-is-metal-gears-solid-snake-called-solid-snake)
 
-**[Interface Segregation Principle (ISP)](https://en.wikipedia.org/wiki/Interface_segregation_principle)** suggests that we should prefer small interfaces to big interfaces. Apart from improved convenience of development, ISP allows us to follow the **Law of Demeter (LoD)**, also known as **principle of least knowledge**. LoD suggests that our pieces of our code should have only limited knowledge about things they operate with.
+**[Interface Segregation Principle (ISP)](https://en.wikipedia.org/wiki/Interface_segregation_principle)** suggests that we should prefer small interfaces to big interfaces. Apart from improved convenience of development, ISP allows us to follow the **Law of Demeter (LoD)**, also known as **principle of least knowledge**. LoD suggests that pieces of our code should have only limited knowledge about things they work with.
 
-One of the ways to follow ISP is by separating our types to interface hierarchies. Following the _knowledge_ term from the LoD, I prefer to name my interfaces as _IKnows**X**_. For quite some time I also used the _I**X**Aware_.
+One of the ways to follow ISP is by separating our types and building interface hierarchies. Following the _knowledge_ term from the LoD, I prefer to name my interfaces as _IKnows**X**_. For quite some time I also used the _I**X**Aware_.
 
 We can extract the `getArea` and `length` methods into separate interfaces. For now, we'll rely on the ability of TypeScript interfaces to extend from multiple other interfaces, and define the same types we had before as follows:
 
@@ -234,13 +234,13 @@ const point: FAF<void, IPoint> = () => ({
 })
 ```
 
-Nothing really changed, but we reduced a bit on repetition.
+Nothing really changed, but we reduced a bit of repetition.
 
 ## Least Knowledge and Interface Composition
 
 Back to [LoD](https://en.wikipedia.org/wiki/Law_of_Demeter). Although extending interfaces may be useful in some cases, we can make our types as clever as we really need.
 
-Let's split everything to the smallest pieces. First, we introduce separate interfaces for all the properties and methods. Of course, it's not mandatory to **always** split to one-field objects. Then, we amend our shape types. We'll make them barebone - by default they will only require a minimal set of dimensions to be usable. But we will also make them generic so that we can define more features if we need them. Our `Rectangle` will be armed with `getArea` and `getPerimeter` whereas the `square` will remain barebone.
+Let's split everything to the smallest pieces. First, we introduce separate interfaces for all the properties and methods. Of course, it's not mandatory to **always** split to one-field objects. Then, we amend our shape types. We'll make them barebone - by default they will only require a minimal set of dimensions to be usable. But we will also make them generic so that we can define more features if we need them. Our `Rectangle` will be armed with `getArea` and `getPerimeter` whereas the `square` will remain barebone. Apart from providing us flexibility of defining objects, this approach also makes destructuring easier. `Pick<Axe>` no longer required!
 
 ```typescript
 type FAF<TArgs, TReturn> = TArgs extends any[]
@@ -308,7 +308,7 @@ getPerimeterOf(s) // Argument of type 'IKnowsLength' is not assignable to parame
 // Property 'getPerimeter' is missing in type 'IKnowsLength' but required in type 'IKnowsGetPerimeter'.
 ```
 
-It is not mandatory to make the _shapes_ generic. We could have made the features generic instead, so that we can provide specific shapes that need those features. It is up to you to decide which approach to choose. If there are two shapes and twenty methods, it makes sense to make shapes generic. If it is vice versa... Well, you get the point. Don't waste type on typing redundant letters, the total quantity of letters you can type throughout your life is not infinite. Here we have two shapes and four features so generalizing shapes sounds like less effort.
+It is not mandatory to make the _shapes_ generic. We could have made the features generic instead, so that we can provide specific shapes that need those features. It is up to you to decide which approach to choose. If there are two shapes and twenty methods, it makes sense to make shapes generic. If it is vice versa... Well, you get the point. My rule of the thumb is: don't waste time on typing redundant letters. The total quantity of letters you can type throughout your life is not infinite. Here we have two shapes and four features so generalizing shapes sounds like two times less effort.
 
 ## Static Methods
 
