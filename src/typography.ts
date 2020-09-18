@@ -20,6 +20,10 @@ export default new Typography({
   headerWeight: '900',
   googleFonts: [
     {
+      name: 'Kumbh Sans',
+      styles: ['300', '700'],
+    },
+    {
       name: 'Montserrat',
       styles: ['400', '900'],
     },
@@ -29,7 +33,7 @@ export default new Typography({
     },
   ],
   bodyFontFamily: [
-    'Montserrat',
+    'Kumbh Sans',
     '-apple-system',
     'BlinkMacSystemFont',
     'Segoe UI',
