@@ -81,7 +81,7 @@ module.exports = {
             options: {
               terminal: 'carbon',
               theme: 'one-light',
-              lineNumbers: true,
+              lineNumbers: false,
             },
           },
           {
