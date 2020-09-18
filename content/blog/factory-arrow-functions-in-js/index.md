@@ -1,12 +1,12 @@
 ---
 title: 'Factory Arrow Functions in JavaScript'
-date: '2020-09-15'
+date: '2020-09-18'
 tags:
   - javascript
   - development
   - patterns
 song: https://music.apple.com/ru/album/strawberry-avalanche-album-version-album-version/372624794?i=372624816&l=en
-image: ./hero.jpg
+image: ./hero.png
 imageAlt: Made by me with Procreate
 description: Use arrow functions for constructing objects in JavaScript. Part I.
 published: true
@@ -14,8 +14,13 @@ published: true
 
 This article describes an alternative approach to instantiating objects from a template in JavaScript. For better comprehension, it is sometimes compared with commonly used ES6 classes.
 
-> DISCLAIMER
-> The term `factory arrow function` is made up as I couldn't succeed in googling for a proper name for that. I avoid calling it `factory function` because it is an existing term that means a different thing. If you know the correct name for the concept covered in this article, please, share it in a comment - I'd be glad to find out.
+> **DISCLAIMER**
+> The term _factory arrow function_ is made up as I couldn't succeed in googling for a proper name for that. I avoid calling it _factory function_ because it is an existing term that means a different thing. If you know the correct name for the concept covered in this article, please, share it in a comment - I'd be glad to find out.
+
+## It's a Series
+
+- [Factory Arrow Functions in JavaScript (part I)](/blog/factory-arrow-functions-in-js)
+- [Factory Arrow Functions in TypeScript (part II)](/blog/factory-arrow-functions-in-ts)
 
 ## ES6 Class Recap
 
@@ -257,6 +262,6 @@ s.getArea() // 100
 
 ## Conclusion
 
-This article covered using factory arrow functions in JavaScript. In the next one, I'll extend the topic by covering factory arrow function usage with TypeScript.
+This article covered using factory arrow functions in JavaScript. [In the next one](/blog/factory-arrow-functions-in-ts/), I extend the topic by covering factory arrow function usage with TypeScript.
 
 I hope you enjoyed the read!
